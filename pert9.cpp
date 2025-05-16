@@ -239,6 +239,5 @@ int main()
         cin.get();
         cout << endl;
         system("clear");
-    }while (choice != '6');
-}
-
+   
+        
