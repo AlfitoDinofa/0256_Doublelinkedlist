@@ -53,4 +53,24 @@ public:
         
     }
 
+Node *current =START;
+    while (current->next != NULL && current->next->noMhs < nim)
+    {
+        current = current->next;
+    }
+
+    if (current->next != NULL && nim == current->next->noMhs)
+    {
+        cout << "\nDuplicate roll numbers not allowed" << endl;
+        return;
+    }
+
+    newNode->next = current->next;
+    newNode->prev = current;
+
+    if (current->next != NULL)
+        current->next->prev = newNode;
+
+    current->next = newNode;
+
 };
